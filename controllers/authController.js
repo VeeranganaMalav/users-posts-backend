@@ -59,7 +59,7 @@ module.exports.login = async (req, res) => {
       // Store refresh token securely (e.g., set as an HTTP-only cookie)
       // res.cookie('refreshToken', refreshToken, { httpOnly: true });
       
-      res.status(200).json({ accessToken });
+      res.status(200).json({ accessToken: accessToken, user: user });
     }
     catch(err){
       res.status(500).send({ error: 'Failed to login the user' });
